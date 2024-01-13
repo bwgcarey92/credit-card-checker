@@ -25,20 +25,16 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 const validateCred = (arr) => {
-    const reverseArr = arr.slice().reverse();
+    const reversedArr = arr.slice().reverse();
     let sum = 0;
-
-    for (let i = 0, i < reverseArr.length; i++) {
+    for (let i = 0; i < reversedArr.length; i++) {
         let currentNum = reverseArr[i];
-
         if (i % 2 === 1) {
             currentNum *= 2;
-            
             if (currentNum > 9) {
                 currentNum -= 9;
             }
         }
-        
         sum += currentNum;
 }
     return sum % 10 === 0;
