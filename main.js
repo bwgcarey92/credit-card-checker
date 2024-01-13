@@ -54,6 +54,41 @@ const findInvalidCards = (arr) => {
     return invalidNums;
 };
 
+const idInvalidCardCompanies = (arr) => {
+    const companies = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        const firstDigit = arr[i][0];
+
+        switch (firstDigit) {
+            case 3:
+                if(!companies.includes('Amex')) {
+                    companies.push('Amex');
+                }
+                break;
+            case 4:
+                if(!companies.includes('Visa')) {
+                    companies.push('Visa');
+                }
+                break;
+            case 5:
+                if(!companies.includes('Mastercard')) {
+                    companies.push('Mastercard');
+                }
+                break;
+            case 6:
+                if(!companies.includes('Discover')) {
+                    companies.push('Discover')
+                }
+                break;
+                defaul:
+                console.log('Company not found');
+        }
+    }
+    
+    return companies;
+};
+
 
 
 
