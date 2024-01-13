@@ -40,6 +40,19 @@ const validateCred = (arr) => {
     return sum % 10 === 0;
 };
 
+const findInvalidCards = (arr) => {
+    const invalidNums = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        const currentNum = arr[i];
+
+        if (!validateCred(currentNum)) {
+            invalidNums.push(currentNum);
+        }
+    }
+
+    return invalidNums;
+};
 
 
 
